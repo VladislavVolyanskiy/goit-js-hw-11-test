@@ -1,6 +1,7 @@
 // -=-=-=-=-=-=- axios async/await fetch used -=-=-=-=-=-=-
 import axios from 'axios';
 const axios = require('axios');
+
 export default class PicsApiService {
   constructor() {
     this.searchQuery = '';
@@ -15,7 +16,7 @@ export default class PicsApiService {
       BASE_URL: 'https://pixabay.com/api/',
     };
 
-    const response = await axios.get(
+    const response = await axios(
       `${options.BASE_URL}?key=${options.API_KEY}&q=${this.searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&page=${this.page}&per_page=${this.perPage}`
     );
     // console.log(response);
