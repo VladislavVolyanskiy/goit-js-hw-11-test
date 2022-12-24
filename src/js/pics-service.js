@@ -16,10 +16,9 @@ export default class PicsApiService {
       BASE_URL: 'https://pixabay.com/api/',
     };
 
-    const response = await axios({
-      method: 'get',
-      url: `${options.BASE_URL}?key=${options.API_KEY}&q=${this.searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&page=${this.page}&per_page=${this.perPage}`,
-    });
+    const response = await axios(
+      `${options.BASE_URL}?key=${options.API_KEY}&q=${this.searchQuery}&image_type=photo&orientation=horizontal&safesearch=true&page=${this.page}&per_page=${this.perPage}`
+    );
     // console.log(response);
 
     const images = await response.data;
