@@ -1,32 +1,31 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
     <link rel="stylesheet" href="./css/styles.css" />
-    <script type="module" src="./index.js"></script>
+    <title>Homework 11</title>
   </head>
   <body>
-    <!-- Форма -->
-    <form class="search-form" id="search-form">
-      <input
-        type="text"
-        name="searchQuery"
-        id="searchQuery"
-        autocomplete="off"
-        placeholder="Search images..."
-      />
-      <button type="submit">Search</button>
-    </form>
-    <!-- Карточки изображений -->
-    <div class="gallery"></div>
-    <button
-      type="button"
-      class="load-more-btn is-hidden"
-      data-action="load-more"
-    >
-      Load more
-    </button>
+    <div class="container">
+      <form class="search-form" id="search-form">
+        <input
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Search images..."
+        />
+        <button type="submit">Search</button>
+      </form>
+      <div class="gallery"></div>
+      <button type="button" class="load-more is-hidden">Load more</button>
+      <div class="loading">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+      </div>
+    </div>
+    <script src="index.js" type="module"></script>
   </body>
 </html>
