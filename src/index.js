@@ -6,6 +6,9 @@ import { message } from './js/message';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
+// import axios from 'axios';
+// const axios = require('axios');
+
 let lightbox = new SimpleLightbox('.gallery a');
 
 const refs = {
@@ -25,6 +28,7 @@ loadMoreBtn.refs.button.addEventListener('click', onLoadMore);
 
 function onSearch(e) {
   e.preventDefault();
+  loadMoreBtn.hide;
   try {
     picsApiService.query = e.currentTarget.elements.searchQuery.value;
     if (picsApiService.query === '') {
@@ -47,12 +51,14 @@ function onSearch(e) {
 }
 
 function onLoadMore() {
-  loadMoreBtn.disable();
   try {
+    loadMoreBtn.disable();
     picsApiService.fetchPics().then(({ hits, totalHits }) => {
       if (picsApiService.loadPages > totalHits) {
         renderGalleryMarkup(hits);
         lightbox.refresh();
+        loadMoreBtn.hide;
+
         return message.endInfo();
       }
       renderGalleryMarkup(hits);
@@ -66,7 +72,7 @@ function onLoadMore() {
 }
 
 function renderGalleryMarkup(hits) {
-  const markup = hits.map(photo => cardTemplate(photo)).join('');
+  const markup = hits.map(images => cardTemplate(images)).join('');
   refs.galleryContainer.insertAdjacentHTML('beforeend', markup);
   lightbox.refresh();
 }
