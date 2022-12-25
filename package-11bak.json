@@ -1,15 +1,15 @@
 {
-  "name": "goit-js-hw-11-test",
+  "name": "goit-js-hw-11",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://vladislavvolyanskiy.github.io/goit-js-hw-11-test",
+  "homepage": "https://vladislavvolyanskiy.github.io/goit-js-hw-11",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-11-test/"
+    "build": "parcel build src/*.html --public-url /goit-js-hw-11/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VladislavVolyanskiy/goit-js-hw-11-test.git"
+    "url": "git+https://github.com/VladislavVolyanskiy/goit-js-hw-11.git"
   },
   "keywords": [],
   "author": "VladislavVolyanskiy <vladislavvolyanskiy@gmail.com>",
