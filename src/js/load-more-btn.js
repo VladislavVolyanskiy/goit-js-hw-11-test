@@ -8,7 +8,7 @@ export default class LoadMoreBtn {
   getRefs(selector) {
     const refs = {};
     refs.button = document.querySelector(selector);
-    // refs.label = refs.button.querySelector('.label');
+    refs.animation = document.querySelector('.loading');
 
     return refs;
   }
@@ -25,9 +25,11 @@ export default class LoadMoreBtn {
 
   show() {
     this.refs.button.classList.remove('is-hidden');
+    this.refs.animation.classList.add('is-hidden');
   }
 
   hide() {
     this.refs.button.classList.add('is-hidden');
+    // this.refs.animation.classList.remove('is-hidden');
   }
 }
